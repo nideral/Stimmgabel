@@ -5,12 +5,13 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "android":"react-native run-android",
-    "ios":"react-native run-ios"
+    "android": "react-native run-android",
+    "ios": "react-native run-ios"
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.4"
+    "react-native": "0.59.4",
+    "react-native-sound-player": "^0.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
