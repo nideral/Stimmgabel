@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View, TextInput, Button} from 'react-native';
+import TunePlayer from './tune-player';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,11 +17,11 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-
 export default class App extends Component {
   state = {
     placeName:"",
-    places: []
+    places: [],
+    loaded: false,
   }
 
   placeNameChangedHandler = (val) => {
@@ -28,6 +29,17 @@ export default class App extends Component {
       placeName: val
     });
   };
+
+  async componentDidMount() {
+    TunePlayer.load('sample_audio');
+    await TunePlayer.loaded();
+    TunePlayer.playbackUpdated((currentTime) => {
+      if(currentTime >= 5) {
+        TunePlayer.stop();
+      }
+    });
+    this.setState({ loaded: true })
+  }
 
   render() {
     return (
@@ -42,6 +54,8 @@ export default class App extends Component {
           <Button
             style = {styles.placeButton}
             title = 'Tune'
+            onPress={TunePlayer.play}
+            disabled={!this.state.loaded}
           />
         </View>
       </View>
