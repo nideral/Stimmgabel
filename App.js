@@ -6,57 +6,18 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, View, TextInput, Button} from 'react-native';
-import TunePlayer from './tune-player';
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
+import TunePlayerButton from './components/TunePlayerButton'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 export default class App extends Component {
-  state = {
-    placeName:"",
-    places: [],
-    loaded: false,
-  }
-
-  placeNameChangedHandler = (val) => {
-    this.setState({
-      placeName: val
-    });
-  };
-
-  async componentDidMount() {
-    TunePlayer.load('sample_audio');
-    await TunePlayer.loaded();
-    TunePlayer.playbackUpdated((currentTime) => {
-      if(currentTime >= 5) {
-        TunePlayer.stop();
-      }
-    });
-    this.setState({ loaded: true })
-  }
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.inputContainer}>
-          <TextInput
-            placeholder ='This is a TextInput'
-            value={this.state.placeName}
-            onChangeText={this.placeNameChangedHandler}
-            style = {styles.placeInput}
-          />
-          <Button
-            style = {styles.placeButton}
-            title = 'Tune'
-            onPress={TunePlayer.play}
-            disabled={!this.state.loaded}
-          />
+          <TunePlayerButton tune="tune_440" title="Tune" />
         </View>
       </View>
     );
