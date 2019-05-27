@@ -2,13 +2,14 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
- * @format
+ * @format 
  * @flow
  */
 
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import TunePlayerButton from './components/TunePlayerButton'
+//import { LinearGradient } from 'expo';
 
 
 export default class App extends Component {
@@ -21,8 +22,8 @@ export default class App extends Component {
            <Image source={require('./img/logo.png')}/>
           </View>
           <Text style={styles.title}>Digitale Stimmgabel</Text>
-          <TunePlayerButton tune="tune_440" title="Play"/>
          </View>
+         <TunePlayerButton tune="tune_440" title="Play"/>
       </View>
     );
   }
@@ -42,7 +43,9 @@ const styles = StyleSheet.create({
     width:'100%',
     alignItems: 'center',
     backgroundColor: 'blue',
-    paddingTop: '10%'
+    paddingTop: '15%',
+    paddingBottom: '10%',
+    //colors:['#4c669f', '#3b5998', '#192f6a']
   },
 
   title: {
@@ -50,7 +53,8 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     fontFamily: 'Roboto',
     fontSize: 20,
-  },
+    marginBottom: '10%'
+  }
 
  /*  placeInput: {
     width:'100%'
