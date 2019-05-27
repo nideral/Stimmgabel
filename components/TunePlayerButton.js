@@ -56,7 +56,7 @@ export default class TunePlayerButton extends Component {
             width:'70%',
             height: '10%',
             alignItems: 'center',
-            backgroundColor: 'green',
+            backgroundColor: '#AAEEC8',
             justifyContent: 'center',
             borderRadius: 55,
             marginTop: '-10%'
