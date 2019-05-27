@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import TunePlayerButton from './components/TunePlayerButton'
 
 
@@ -15,32 +15,47 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.inputContainer}>
-          <TunePlayerButton tune="tune_440" title="Tune" />
-        </View>
+      <View style={styles.content}>
+        <View style={styles.header}>
+          <View style={styles.image}>
+           <Image source={require('./img/logo.png')}/>
+          </View>
+          <Text style={styles.title}>Digitale Stimmgabel</Text>
+          <TunePlayerButton tune="tune_440" title="Play"/>
+         </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  content: {
+    width: '100%',
     flex:1,
-    padding: 26,
-    backgroundColor: '#fff',
-    alignItems: 'center' 
+    backgroundColor: 'red',
+    alignItems: 'center',
+    paddingBottom: "-20%"
   },
-  inputContainer: {
-    flexDirection:'row',
+
+  header: {
+    flexDirection:'column',
     width:'100%',
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'blue',
+    paddingTop: '10%'
   },
-  placeInput: {
-    width:'70%'
+
+  title: {
+    color: 'white',
+    marginTop: '5%',
+    fontFamily: 'Roboto',
+    fontSize: 20,
+  },
+
+ /*  placeInput: {
+    width:'100%'
   },
   placeButton: {
-    width:'30%'
-  }
+    width:'100%'
+  } */
 });
