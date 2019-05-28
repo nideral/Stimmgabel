@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-native';
 import TunePlayer from '../TunePlayer';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Platform } from 'react-native';
 
 export default class TunePlayerButton extends Component {
     state = {
@@ -16,14 +16,6 @@ export default class TunePlayerButton extends Component {
                 >
                     <Text style={styles.ButtonTitle}>Play</Text>
                 </TouchableOpacity>
-
-
-            // <Button
-            //     buttonStyle={styles.PlayButton}
-            //     title = {this.props.title}
-            //     onPress = {this.play.bind(this)}
-            //     disabled = {this.state.disabled}
-            // />
         )
     }
 
@@ -64,9 +56,9 @@ export default class TunePlayerButton extends Component {
 
           ButtonTitle: {
             color: 'white',
-            fontFamily: 'Roboto',
-            fontSize: 20,
-            marginTop: '-10%'
+            fontFamily: Platform.OS === 'ios' ? 'Helvetica' : 'Roboto',
+            fontSize: 25,
+            marginTop: Platform.OS === 'ios' ? '-14%' : '-12%',
           },
 
 
