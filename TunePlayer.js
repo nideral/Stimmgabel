@@ -2,7 +2,7 @@ import SoundPlayer from 'react-native-sound-player';
 import Timer from 'react-native-timer';
 
 const fileType = 'wav';
-const MAX_VOLUME = 1;
+const MAX_VOLUME = 10;
 
 /**
  * Adapter for react-navtive-sound-player.
@@ -19,6 +19,7 @@ export default class TunePlayer {
    * @param {String} tune Path to the sound file.
    */
   static load(tune) {
+    console.log(tune)
     try {
       SoundPlayer.loadSoundFile(tune, fileType);
     } catch (error) {
