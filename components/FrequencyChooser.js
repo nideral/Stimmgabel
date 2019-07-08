@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Picker } from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 
 export const frequencies = [415, 430, 438, 440]
 
@@ -8,14 +8,6 @@ export default class FrequencyChooser extends Component {
         freq: frequencies[0],
     }
 
-    PickerItems() {
-        return frequencies.map((freq) => {
-            return(
-                <Picker.Item key={freq} label={freq.toString()} value={freq} />
-            );
-        });
-        }
-
     updateFreq(freq) {
         this.setState({ freq })
         this.props.onFreqChange(freq);
@@ -23,12 +15,13 @@ export default class FrequencyChooser extends Component {
 
     render(props) {
         return (
-            <Picker
-                selectedValue={this.state.freq}
+            <RNPickerSelect
+                items={frequencies.map(f => ({ label: f.toString(), value: f }))}
+                value={this.state.freq}
                 style={{height: 50, width: 100}}
-                onValueChange={(freq) => this.updateFreq(freq) }>
-                {this.PickerItems()}
-            </Picker>
+                onValueChange={freq => this.updateFreq(freq) }
+                placeholder={{}}
+                disabled={this.props.disabled} />
         )
     }
 
@@ -39,4 +32,5 @@ export default class FrequencyChooser extends Component {
 
 FrequencyChooser.defaultProps = {
     onFreqChange: () => {},
+    disabled: false,
 }

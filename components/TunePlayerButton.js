@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TunePlayer from '../TunePlayer';
 import { StyleSheet, Text, TouchableOpacity, Platform } from 'react-native';
 import { frequencies } from './FrequencyChooser';
+import RNShake from 'react-native-shake';
 
 export default class TunePlayerButton extends Component {
     state = {
@@ -26,13 +27,17 @@ export default class TunePlayerButton extends Component {
         TunePlayer.load(path);
         await loadedEvent;
         this.setState({ disabled: false })
+        this.props.onDisableChange(false);
+        this.enableShake();
         TunePlayer.playbackUpdated((currentTime) => {
-            if(currentTime >= 3) {
-                TunePlayer.stop();
+            if(currentTime >= this.props.duration * 0.0001) {
+                TunePlayer.stop({ duration: this.props.duration });
             }
         });
         TunePlayer.paused(() => {
             this.setState({ disabled: false });
+            this.props.onDisableChange(false);
+            this.enableShake();
         });
     }
 
@@ -42,8 +47,24 @@ export default class TunePlayerButton extends Component {
     
     play() {
         TunePlayer.play();
-        this.setState({ disabled: true })
+        this.props.onDisableChange(true);
+        this.setState({ disabled: true });
+        this.disabledShake();
     }
+
+    enableShake() {
+        RNShake.addEventListener('ShakeEvent', () => {
+            this.play();
+        });
+    }
+
+    disabledShake() { RNShake.removeEventListener('ShakeEvent'); }
+
+    componentWillMount() {
+        this.enableShake();
+    }
+
+    componentWillUnmount() { this.disabledShake(); }
 
     async componentDidUpdate(prevProps) {
         if (prevProps.freq !== this.props.freq) {
@@ -54,6 +75,8 @@ export default class TunePlayerButton extends Component {
 
 TunePlayer.defaultProps = {
     freq: frequencies[0],
+    onDisableChange: () => {},
+    duration: 6000,
 }
 
 const styles = StyleSheet.create({

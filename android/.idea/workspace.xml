@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbd432e5-1bda-4d0b-bd0f-8f229d1fca8a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tunegabel/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tunegabel/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../components/FrequencyChooser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../components/FrequencyChooser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../components/TunePlayerButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/../components/TunePlayerButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/TuneGabel.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/TuneGabel.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,11 +185,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="160" y="0" width="1120" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.3116883" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.16666667" />
       <window_info id="Structure" order="3" side_tool="true" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Build Variants" order="5" side_tool="true" />
@@ -192,7 +201,7 @@
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32920793" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Build" order="6" visible="true" weight="0.44491526" />
+      <window_info anchor="bottom" id="Build" order="6" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.32920793" />
       <window_info anchor="bottom" id="Debug" order="9" />
