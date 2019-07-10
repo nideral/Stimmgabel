@@ -13,6 +13,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import FrequencyChooser from './components/FrequencyChooser';
 import { frequencies } from './components/FrequencyChooser';
 
+
 export default class App extends Component {
   state = {
     freq: frequencies[0],
@@ -32,13 +33,14 @@ export default class App extends Component {
            <Image source={require('./img/logo.png')}/>
           </View>
           <Text style={styles.title}>Digitale Stimmgabel</Text>
-         </LinearGradient>
-         <TunePlayerButton
+        </LinearGradient>
+        <TunePlayerButton
             onDisableChange={disabled => this.setState({ disabled })}
             freq={this.state.freq}
             title="Play"
             duration={this.state.duration} />
-         <FrequencyChooser disabled={this.state.disabled} onFreqChange={(freq) => this.setState({ freq })} />
+         <FrequencyChooser disabled={this.state.disabled} onFreqChange={(freq) => this.setState({ freq })} 
+         />
          <Slider
             style={{width: 200, height: 40}}
             minimumValue={2}

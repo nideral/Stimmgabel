@@ -74,7 +74,7 @@ export default class TunePlayerButton extends Component {
 } 
 
 TunePlayer.defaultProps = {
-    freq: frequencies[0],
+    freq: frequencies[3],
     onDisableChange: () => {},
     duration: 6000,
 }
