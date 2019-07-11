@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     row1:{
         width: '100%',
         flexDirection: 'row',
-        height:'25%',
+        height:'22%',
         marginTop: 30
         
 
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     row2:{
         width: '100%',
         flexDirection: 'row',
-        height:'25%',
+        height:'22%',
         marginTop: 30,
 
     
