@@ -10,9 +10,15 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image,Platform } from 'react-native';
 import TunePlayerButton from './components/TunePlayerButton';
 import LinearGradient from 'react-native-linear-gradient';
+import FrequencyChooser from './components/FrequencyChooser';
+import { frequencies } from './components/FrequencyChooser';
+
 
 
 export default class App extends Component {
+  state = {
+    freq: frequencies[0],
+  }
 
   render() {
     return (
@@ -23,7 +29,8 @@ export default class App extends Component {
           </View>
           <Text style={styles.title}>Digitale Stimmgabel</Text>
          </LinearGradient>
-         <TunePlayerButton tune="tune_440" title="Play"/>
+         <TunePlayerButton freq={this.state.freq} title="Play"/>
+         <FrequencyChooser onFreqChange={(freq) => this.setState({ freq })} />
       </View>
     );
   }
