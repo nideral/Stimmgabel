@@ -108,8 +108,6 @@ const styles = StyleSheet.create({
       borderRadius: 12,
       marginLeft:4,
       marginRight:4
-
-    
     },
 
     ButtonActive: {
@@ -126,7 +124,8 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         marginTop: 30,
-        marginLeft: 25
+        marginLeft: 25,
+        marginRight: 25
     },
 
     row2:{
