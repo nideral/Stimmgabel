@@ -7,11 +7,13 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image, Slider, Platform } from 'react-native';
+import { StyleSheet, View, Text, Image, Slider, Platform, ScrollView } from 'react-native';
 import TunePlayerButton from './components/TunePlayerButton';
 import LinearGradient from 'react-native-linear-gradient';
 import FrequencyChooser from './components/FrequencyChooser';
 import { frequencies } from './components/FrequencyChooser';
+import DurationChooser from './components/DurationChooser';
+import BackgroundPlayer from './components/BackgroundPlayer';
 
 
 export default class App extends Component {
@@ -28,7 +30,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.content}>
-        <LinearGradient start={{x: 0.0, y: 0.0}} end={{x: 1.0, y: 1.0}} colors={['#9ABDEB', '#96FAC3']}style={styles.header}>
+         <LinearGradient start={{x: 0.0, y: 0.0}} end={{x: 1.0, y: 1.0}} colors={['#9ABDEB', '#96FAC3']}style={styles.header}>
           <View style={styles.image}>
            <Image source={require('./img/logo.png')}/>
           </View>
@@ -39,14 +41,14 @@ export default class App extends Component {
             freq={this.state.freq}
             title="Play"
             duration={this.state.duration} />
-         <FrequencyChooser disabled={this.state.disabled} onFreqChange={(freq) => this.setState({ freq })} 
-         />
-         <Slider
-            style={{width: 200, height: 40}}
-            minimumValue={2}
-            maximumValue={10}
-            onSlidingComplete={v => this.updateFadeOutDuration(v)}
-         />
+        <View style={styles.viewbeforescrollview }>
+          <ScrollView style ={styles.scrollstyle} vertical>
+            <BackgroundPlayer/>
+            <FrequencyChooser disabled={this.state.disabled} onFreqChange={(freq) => this.setState({ freq })} />
+            <DurationChooser />
+
+          </ScrollView> 
+        </View>
       </View>
     );
   }
@@ -57,7 +59,6 @@ const styles = StyleSheet.create({
     width: '100%',
     flex:1,
     alignItems: 'center',
-    paddingBottom: "-20%",
   },
 
   header: {
@@ -74,5 +75,20 @@ const styles = StyleSheet.create({
     fontFamily: Platform.OS === 'ios' ? 'Helvetica' : 'Roboto',
     fontSize: 22,
     marginBottom: '10%'
+  },
+
+
+  viewbeforescrollview: {
+    width: '100%',
+    flex: 1,
+    marginTop: 5,
+  },
+
+  scrollstyle: {
+    width: '100%',
+    flexGrow: 1, 
+    paddingTop: 20,
+    flex: 1,
   }
+
 });
