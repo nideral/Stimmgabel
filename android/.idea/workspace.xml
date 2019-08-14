@@ -169,7 +169,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Build" order="6" visible="true" weight="0.32719395" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32936078" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="9" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.38626608" />

@@ -20,19 +20,14 @@ export default class App extends Component {
   state = {
     freq: frequencies[0],
     disabled: false,
-    duration: 6000,
-  }
-
-  updateFadeOutDuration(duration) {
-    this.setState({ duration: duration * 1000 });
   }
 
   render() {
     return (
       <View style={styles.content}>
-         <LinearGradient start={{x: 0.0, y: 0.0}} end={{x: 1.0, y: 1.0}} colors={['#9ABDEB', '#96FAC3']}style={styles.header}>
+        <LinearGradient start={{x: 0.0, y: 0.0}} end={{x: 1.0, y: 1.0}} colors={['#9ABDEB', '#96FAC3']}style={styles.header}>
           <View style={styles.image}>
-           <Image source={require('./img/logo.png')}/>
+            <Image source={require('./img/logo.png')}/>
           </View>
           <Text style={styles.title}>Digitale Stimmgabel</Text>
         </LinearGradient>
@@ -41,10 +36,10 @@ export default class App extends Component {
             freq={this.state.freq}
             title="Play"
             duration={this.state.duration} />
-        <View style={styles.viewbeforescrollview }>
+        <View OnDisableChange={disabled => this.setState({ disabled })} style={styles.viewbeforescrollview }>
           <ScrollView style ={styles.scrollstyle} vertical>
             <BackgroundPlayer/>
-            <FrequencyChooser disabled={this.state.disabled} onFreqChange={(freq) => this.setState({ freq })} />
+            <FrequencyChooser onFreqChange={(freq) => this.setState({ freq })} />
             <DurationChooser />
 
           </ScrollView> 

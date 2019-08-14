@@ -12,8 +12,8 @@ export default class DurationChooser extends Component {
     constructor(props) {
         super(props)
         this.state = { 
-            duration: 6000,
-            Screenduration: this.duration/1000
+            duration: 2000,
+            Screenduration: this.duration
         }
       }
     
@@ -28,7 +28,7 @@ export default class DurationChooser extends Component {
 
                 <View style={styles.row}>
                     <Text style={styles.FunctionTitle}>Klingdauer auswählen </Text>
-                    <Text style={styles.Duration}> {this.state.Screenduration} Sekunden </Text>
+                    <Text style={styles.Duration}> {this.state.duration/1000} s </Text>
                 </View>  
                 <Slider 
                         style={styles.slider}
