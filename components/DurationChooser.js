@@ -13,6 +13,7 @@ export default class DurationChooser extends Component {
         super(props)
         this.state = { 
             duration: 6000,
+            Screenduration: this.duration/1000
         }
       }
     
@@ -24,13 +25,17 @@ export default class DurationChooser extends Component {
       render() {
         return (
             <View style={styles.containter}>
-                <Text style={styles.FunctionTitle}>Klingdauer auswählen </Text>
+
+                <View style={styles.row}>
+                    <Text style={styles.FunctionTitle}>Klingdauer auswählen </Text>
+                    <Text style={styles.Duration}> {this.state.Screenduration} Sekunden </Text>
+                </View>  
                 <Slider 
-                style={styles.slider}
-                minimumValue={2}
-                maximumValue={10}
-                onSlidingComplete={v => this.updateFadeOutDuration(v)}
-                />
+                        style={styles.slider}
+                        minimumValue={2}
+                        maximumValue={10}
+                        onSlidingComplete={v => this.updateFadeOutDuration(v)}
+                    />
             </View>
          )
        }
@@ -58,6 +63,17 @@ const styles = StyleSheet.create({
         marginLeft: 30,
         width: 350, 
         height: 100,
-    }
+    },
+
+    row:{
+        flexDirection: 'row',
+    },
+
+    Duration:{
+        position: "absolute",
+        right: 0,
+        fontSize: 15,
+    },
+
 
   })

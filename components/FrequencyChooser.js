@@ -13,14 +13,18 @@ export default class FrequencyChooser extends Component {
         super(props)
         this.state = { 
             freq: frequencies[0],
-            active: false
+            selectedButton: frequencies[0]
         }
       }
     
       updateFreq(freq) {
         this.setState({ freq })
         this.props.onFreqChange(freq);
+        this.setState({ selectedButton: freq });
     }
+
+    
+    
 
       render() {
         return (
@@ -29,95 +33,62 @@ export default class FrequencyChooser extends Component {
             <Text style={styles.FunctionTitle}>Frequenz auswählen </Text>
             <View style={styles.row}>
                 <TouchableOpacity
-                style={this.state.active ? styles.ButtonActive : styles.ButtonInactive}
-                onPress={(freq) => this.updateFreq(frequencies[0])}> 
+                 style={[styles.Button, {backgroundColor:
+                    this.state.selectedButton === frequencies[0]
+                        ? "#aaeec8"
+                        : "#B5C0BF",
+                }]}
+                onPress={(freq) => this.updateFreq(frequencies[0])}>     
                     <Text style={styles.buttonText}>415 hz </Text>
                 </TouchableOpacity>
                     
                 <TouchableOpacity
-                 style={this.state.active ? styles.ButtonActive : styles.ButtonInactive}
+                 style={[styles.Button, {backgroundColor:
+                    this.state.selectedButton === frequencies[1]
+                        ? "#aaeec8"
+                        : "#B5C0BF",
+                }]}
                  onPress={(freq) => this.updateFreq(frequencies[1])}> 
                     <Text style={styles.buttonText}>430 hz </Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={this.state.active ? styles.ButtonActive : styles.ButtonInactive}
+                    style={[styles.Button, {backgroundColor:
+                        this.state.selectedButton === frequencies[2]
+                            ? "#aaeec8"
+                            : "#B5C0BF",
+                    }]}
                     onPress={(freq) => this.updateFreq(frequencies[2])}> 
                     <Text style={styles.buttonText}>438 hz </Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                style={this.state.active ? styles.ButtonActive : styles.ButtonInactive}
+                style={[styles.Button, {backgroundColor:
+                    this.state.selectedButton === frequencies[3]
+                        ? "#aaeec8"
+                        : "#B5C0BF",
+                }]}
                 onPress={(freq) => this.updateFreq(frequencies[3])}> 
                     <Text style={styles.buttonText}>440 hz </Text>
                 </TouchableOpacity>
             </View>
     </View>
-
-
-
-
-
-
-           /*  <View style={styles.containter}>
-                <Text style={styles.FunctionTitle}>Frequenz auswählen </Text>
-                <View style={styles.row1}>
-                    <View style={styles.column}>
-                        <TouchableOpacity
-                        style={this.state.active ? styles.ButtonActive : styles.ButtonInactive}
-                        onPress={(freq) => this.updateFreq(frequencies[0])}> 
-                            <Text style={styles.buttonText}>415 hz </Text>
-                        </TouchableOpacity>
-                    </View>    
-                    <View style={styles.column}>
-                        <TouchableOpacity
-                        style={this.state.active ? styles.ButtonActive : styles.ButtonInactive}
-                        onPress={(freq) => this.updateFreq(frequencies[1])}> 
-                            <Text style={styles.buttonText}>430 hz </Text>
-                        </TouchableOpacity>
-                    </View>   
-                </View>
-                <View style={styles.row2}>
-                <View style={styles.column}>
-                    <TouchableOpacity
-                    style={this.state.active ? styles.ButtonActive : styles.ButtonInactive}
-                    onPress={(freq) => this.updateFreq(frequencies[2])}> 
-                        <Text style={styles.buttonText}>438 hz </Text>
-                    </TouchableOpacity>
-                    </View>    
-                    <View style={styles.column}>
-                    <TouchableOpacity
-                    style={this.state.active ? styles.ButtonActive : styles.ButtonInactive}
-                    onPress={(freq) => this.updateFreq(frequencies[3])}> 
-                        <Text style={styles.buttonText}>440 hz </Text>
-                    </TouchableOpacity>
-                </View>   
-            </View>
-        </View> */
          )
        }
      }
 
 const styles = StyleSheet.create({
 
-    ButtonInactive: {
-      alignItems: 'center',
-      backgroundColor: '#aaeec8',
-      padding: 10,
-      height: 80,
-      borderRadius: 12,
-      marginLeft:4,
-      marginRight:4
-    },
 
-    ButtonActive: {
+    Button: {
         alignItems: 'center',
         backgroundColor: '#aaeec8',
-        padding: 10,
-        height: 80,
+        paddingTop: 10,
+        height: 70,
         borderRadius: 12,
         marginLeft:4,
-        marginRight:4
+        marginRight:4,
+        width: 80
       },
 
     row:{

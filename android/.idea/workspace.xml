@@ -7,6 +7,11 @@
     <list default="true" id="dbd432e5-1bda-4d0b-bd0f-8f229d1fca8a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../components/BackgroundPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../components/BackgroundPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../components/DurationChooser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../components/DurationChooser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../components/FrequencyChooser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../components/FrequencyChooser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,20 +39,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="andoird&#9;null&#9;null" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="device.picker.selection" value="ce061606a519d30f04" />
+    <property name="device.picker.selection" value="Pixel_2_API_28" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="settings.editor.splitter.proportion" value="0.2106825" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1565701835044" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1565806166564" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -163,9 +168,9 @@
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.20260021" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="6" weight="0.32719395" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Build" order="6" visible="true" weight="0.32719395" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="9" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.38626608" />
       <window_info anchor="right" id="Capture Analysis" order="1" />

@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
 
     CloseButton:{
         alignItems: 'center',
-        backgroundColor: '#847B7B',
+        backgroundColor: '#B5C0BF',
         height: 60,
         width: '100%',
         borderRadius: 12,
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     buttonText:{
         color: 'white',
         fontFamily: Platform.OS === 'ios' ? 'Helvetica' : 'Roboto',
-        fontSize: 25,
+        fontSize: 23,
         textAlign: "center",
     },
 
