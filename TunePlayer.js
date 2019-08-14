@@ -2,7 +2,7 @@ import SoundPlayer from 'react-native-sound-player';
 import Timer from 'react-native-timer';
 
 const fileType = 'wav';
-const MAX_VOLUME = 10;
+const MAX_VOLUME = 1;
 
 /**
  * Adapter for react-navtive-sound-player.
@@ -19,7 +19,6 @@ export default class TunePlayer {
    * @param {String} tune Path to the sound file.
    */
   static load(tune) {
-    console.log(tune)
     try {
       SoundPlayer.loadSoundFile(tune, fileType);
     } catch (error) {
@@ -32,7 +31,6 @@ export default class TunePlayer {
    *  Does not replay when called multiple times.
    */
   static play() {
-    SoundPlayer.setVolume(MAX_VOLUME);
     Timer.setInterval('trackCurrentTime', async () => {
       const { currentTime } = await SoundPlayer.getInfo();
       this.playbackCallback(currentTime);
@@ -49,7 +47,7 @@ export default class TunePlayer {
    * Calculate linear fadeOut according to duration
    */
   static fadeOut({ duration }) {
-    const steps = 40;
+    const steps = 30;
     const interval = duration / steps;
     const stepSize = 1 / steps;
     let step = 0;
@@ -57,6 +55,7 @@ export default class TunePlayer {
     Timer.setInterval('fadeout', () => {
       if (step >= 1) {
         Timer.clearInterval('fadeout');
+        SoundPlayer.setVolume(MAX_VOLUME);
         TunePlayer.stop({ fadeOut: false });
       } else {
         SoundPlayer.setVolume(1 - step);
@@ -69,12 +68,13 @@ export default class TunePlayer {
    *  Pauses the current track and seeks to the beginning.
    *  Able to replay again.
    */
-  static stop({ fadeOut = true, duration = 3000 } = {}) {
+  static stop({ fadeOut = true, duration = 6000 } = {}) {
     // stops interval for getting info.
     Timer.clearInterval('trackCurrentTime');
     try {
       if (fadeOut) {
-        TunePlayer.fadeOut({ duration });
+        const fadeOutDuration = Math.floor(duration * 0.9)
+        TunePlayer.fadeOut({ duration: fadeOutDuration });
       } else {
         SoundPlayer.pause();
         SoundPlayer.seek(0);

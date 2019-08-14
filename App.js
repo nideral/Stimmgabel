@@ -7,17 +7,22 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image,Platform } from 'react-native';
+import { StyleSheet, View, Text, Image, Slider, Platform } from 'react-native';
 import TunePlayerButton from './components/TunePlayerButton';
 import LinearGradient from 'react-native-linear-gradient';
 import FrequencyChooser from './components/FrequencyChooser';
 import { frequencies } from './components/FrequencyChooser';
 
 
-
 export default class App extends Component {
   state = {
     freq: frequencies[0],
+    disabled: false,
+    duration: 6000,
+  }
+
+  updateFadeOutDuration(duration) {
+    this.setState({ duration: duration * 1000 });
   }
 
   render() {
@@ -28,9 +33,20 @@ export default class App extends Component {
            <Image source={require('./img/logo.png')}/>
           </View>
           <Text style={styles.title}>Digitale Stimmgabel</Text>
-         </LinearGradient>
-         <TunePlayerButton freq={this.state.freq} title="Play"/>
-         <FrequencyChooser onFreqChange={(freq) => this.setState({ freq })} />
+        </LinearGradient>
+        <TunePlayerButton
+            onDisableChange={disabled => this.setState({ disabled })}
+            freq={this.state.freq}
+            title="Play"
+            duration={this.state.duration} />
+         <FrequencyChooser disabled={this.state.disabled} onFreqChange={(freq) => this.setState({ freq })} 
+         />
+         <Slider
+            style={{width: 200, height: 40}}
+            minimumValue={2}
+            maximumValue={10}
+            onSlidingComplete={v => this.updateFadeOutDuration(v)}
+         />
       </View>
     );
   }
