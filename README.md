@@ -3,15 +3,12 @@ Eine Digitale Stimmgabel als iOS und Android Mobileapplikation.
 
 ## Getting Started
 
-Für dieses Projekt wird Java 8 verwendet.
-Die Android App kann mit Android Studio geöffnet werden
-Die iOS App kann mit XCode geöffnet werden.
+Für dieses Projekt wird Java 8 verwendet. Die Android App kann mit Android Studio geöffnet werden, die iOS App  mit XCode.
 
 Clone Repo
 
 ````
 git clone https://github.com/nideral/Stimmgabel.git
-
 ````
 
 
@@ -20,7 +17,6 @@ Install dependecies for react native
 ````
 cd stimmgabel
 npm install
-
 ````
 
 ## React Native Requirements and Getting Started
@@ -31,15 +27,14 @@ npm install
 
 ## IOS
 
-````
-Open TuneGabel.xcodeproj in XCode
-react-native run-ios
+TuneGabel.xcodeproj in XCode äffnen
 
+````
+react-native run-ios
 ````
 
 ## Android
 
 ````
 react-native run-android
-
 ````
