@@ -1,5 +1,6 @@
 # IP05 "Digitale Stimmgabel"
 Eine Digitale Stimmgabel als iOS und Android Mobileapplikation.
+Die IP05 Abgabe ist mit dem Tag 1.0.0 versehen.
 
 ## Getting Started
 
