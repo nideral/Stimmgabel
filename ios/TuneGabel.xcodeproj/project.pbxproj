@@ -39,6 +39,10 @@
 		5FAB0C882286E513000748B6 /* sample_audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5FAB0C612286E512000748B6 /* sample_audio.mp3 */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		877AE90A229C960600FC5008 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 877AE907229C95CA00FC5008 /* libBVLinearGradient.a */; };
+		88DA4BDA230698EB000A8FC6 /* sine_415.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88DA4BAD230698EA000A8FC6 /* sine_415.wav */; };
+		88DA4BDB230698EB000A8FC6 /* sine_438.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88DA4BD7230698EA000A8FC6 /* sine_438.wav */; };
+		88DA4BDC230698EB000A8FC6 /* sine_430.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88DA4BD8230698EA000A8FC6 /* sine_430.wav */; };
+		88DA4BDD230698EB000A8FC6 /* sine_440.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88DA4BD9230698EA000A8FC6 /* sine_440.wav */; };
 		93C7D7B4617640C786918FD8 /* libRNShakeEvent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D32FFECC16FF4C369E39B4CD /* libRNShakeEvent.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
@@ -382,6 +386,10 @@
 		80CAC29504D6407C9877A50C /* libRNCSlider.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCSlider.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		877AE901229C95CA00FC5008 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		88DA4BAD230698EA000A8FC6 /* sine_415.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sine_415.wav; path = ../android/app/src/main/res/raw/sine_415.wav; sourceTree = "<group>"; };
+		88DA4BD7230698EA000A8FC6 /* sine_438.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sine_438.wav; path = ../android/app/src/main/res/raw/sine_438.wav; sourceTree = "<group>"; };
+		88DA4BD8230698EA000A8FC6 /* sine_430.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sine_430.wav; path = ../android/app/src/main/res/raw/sine_430.wav; sourceTree = "<group>"; };
+		88DA4BD9230698EA000A8FC6 /* sine_440.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sine_440.wav; path = ../android/app/src/main/res/raw/sine_440.wav; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		D32FFECC16FF4C369E39B4CD /* libRNShakeEvent.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNShakeEvent.a; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -593,6 +601,10 @@
 		5FA271CF2286CE7D0028DFB0 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				88DA4BAD230698EA000A8FC6 /* sine_415.wav */,
+				88DA4BD8230698EA000A8FC6 /* sine_430.wav */,
+				88DA4BD7230698EA000A8FC6 /* sine_438.wav */,
+				88DA4BD9230698EA000A8FC6 /* sine_440.wav */,
 				5FAB0C612286E512000748B6 /* sample_audio.mp3 */,
 				001B67A201784B11986C269A /* libRNSoundPlayer.a */,
 				D32FFECC16FF4C369E39B4CD /* libRNShakeEvent.a */,
@@ -1185,9 +1197,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88DA4BDA230698EB000A8FC6 /* sine_415.wav in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				5FAB0C882286E513000748B6 /* sample_audio.mp3 in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				88DA4BDB230698EB000A8FC6 /* sine_438.wav in Resources */,
+				88DA4BDC230698EB000A8FC6 /* sine_430.wav in Resources */,
+				88DA4BDD230698EB000A8FC6 /* sine_440.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
